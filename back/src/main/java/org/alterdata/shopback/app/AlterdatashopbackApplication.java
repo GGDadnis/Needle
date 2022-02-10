@@ -45,16 +45,16 @@ public class AlterdatashopbackApplication {
 			userservice.inserirRole(new RoleInserirDTO("ADMIN"));
 		}
 
-		// Verifica e cadastra se o usuário Carlos(2) não estiver cadastrado.
+		// Verifica e cadastra se o usuário admin não estiver cadastrado.
 		if (!userservice.idExisteUsuario(1L)) {
-			UsuarioInserirDTO usuarioInserirDTO = new UsuarioInserirDTO("josé", "vitornicodemus@gmail.com", "123", "976041000");
+			UsuarioInserirDTO usuarioInserirDTO = new UsuarioInserirDTO("admin", "dadnis@gmail.com", "123", "99999999");
 			userservice.inserirUsuario(usuarioInserirDTO);
 			Usuario usuario = new Usuario(usuarioInserirDTO);
 		}
 
-		// Verifica e cadastra se o usuário Carlos(2) não estiver cadastrado.
+		// Verifica e cadastra se o usuário user não estiver cadastrado.
 		if (!userservice.idExisteUsuario(2L)) {
-			UsuarioInserirDTO usuarioInserirDTO = new UsuarioInserirDTO("carlos", "outroemail@gmail.com", "123", "976041000");
+			UsuarioInserirDTO usuarioInserirDTO = new UsuarioInserirDTO("user", "vitornicodemus@gmail.com", "123", "99999999");
 			userservice.inserirUsuario(usuarioInserirDTO);
 			Usuario usuario = new Usuario(usuarioInserirDTO);
 			usuario.setRole(Arrays.asList(rolerp.getById(2L)));
