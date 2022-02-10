@@ -8,16 +8,23 @@ import "./Styles.css";
 export default function Edit_Usuario() {
   
   const {idUsuario,SetIdUsuario}= useContext(Context)
+  const token = localStorage.getItem("tokenA")
+  const [usuario,setUsuario]= useState()
 
   console.log(idUsuario)
 
-  const token = localStorage.getItem("tokenA")
-  const [usuario,setUsuario]= useState()
   const[form, setForm] = useState({
     nome:"",
     email:"",
     senha:"",
     telefone:""})
+
+    function changeForm(e){
+      const {name, value} = e.target;
+      console.log(form) 
+      setForm({...form, [name]: value})
+    
+  }
 
     useEffect(() => {     
 
@@ -44,14 +51,9 @@ export default function Edit_Usuario() {
          })
         },[])
 
-        function changeForm(e){
-          const {name, value} = e.target;
-          console.log(form) 
-          setForm({...form, [name]: value})
-        
-      }
+     
       function Atualizar(){
-        api.put(`http://localhost:8080/cadastro/usuarios/alterar/${usuario.nome}`,{ 
+        api.put(`cadastro/usuarios/alterar/${usuario.nome}`,{ 
 
           nome:form.nome,
           email:form.email,
@@ -64,11 +66,7 @@ export default function Edit_Usuario() {
          }                       
           ).then(response => console.log(response)).catch((erro)=>console.log(erro))
           window.location.reload()
-        }
-      
-
-
-
+      }
 
 
   return (

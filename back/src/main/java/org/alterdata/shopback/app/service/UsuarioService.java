@@ -13,10 +13,10 @@ import org.alterdata.shopback.app.model.Usuario;
 
 public interface UsuarioService {
 
-	UsuarioDTO atualizarUsuario(Long id, UsuarioInserirDTO usuario);
+	UsuarioDTO inserirUsuario(UsuarioInserirDTO usuarioInserirDTO);
 
 	void removerIdUsuario(Long id);
-	
+
 	//adicona role a um usuario
 	void adicionarRole(Long id, RoleInserirDTO role);
 
@@ -26,9 +26,10 @@ public interface UsuarioService {
 
 	List<UsuarioDTO> pesquisarTodosUsuario();
 
-	UsuarioDTO inserirUsuario(UsuarioInserirDTO usuarioInserirDTO) throws EmailException;
-	
+	UsuarioDTO atualizarUsuario(String nome, UsuarioInserirDTO usuarioInserirDTO);
+
 	//cria nova role
 	RoleDTO inserirRole(RoleInserirDTO role);
+
 
 }

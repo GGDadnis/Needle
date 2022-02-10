@@ -83,20 +83,14 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
 	public void removerIdUsuario(Long id) {
 		usuarioRepository.deleteById(id);
 	}
-	
+
 	@Override
-	public UsuarioDTO atualizarUsuario(Long id , UsuarioInserirDTO usuario){
-		Usuario user = usuarioRepository.getById(id);
-		if(user == null) {
-			throw new IdException("Usuário não encontrado.");
-		}
-		user.setNome(usuario.getNome());
-		user.setEmail(usuario.getEmail());
-		user.setSenha(passwordEncoder.encode(usuario.getSenha()));
-		user.setTelefone(usuario.getTelefone());
-		UsuarioDTO usuarioDTO = new UsuarioDTO(user);
-		usuarioRepository.save(usuarioDTO);
-		return usuarioDTO;
+	public UsuarioDTO atualizarUsuario(String nome, UsuarioInserirDTO usuarioInserirDTO){
+		Usuario usuario = new Usuario(usuarioInserirDTO);
+		Usuario user = usuarioRepository.findByNome(nome);
+		usuario.setId(user.getId());
+		usuarioRepository.save(usuario);
+		return new UsuarioDTO(usuario);
 	}
 
 	//adiciona role a um usuario, por exemplo adicionar o status de admin a um atendente

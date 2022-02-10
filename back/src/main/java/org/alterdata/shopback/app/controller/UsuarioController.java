@@ -62,14 +62,18 @@ public class UsuarioController {
 			return ResponseEntity.unprocessableEntity().body(e.getMessage());
 			}
 		}
-		
-	@PutMapping("/alterar/{id}")
-	public ResponseEntity<Object> AlterarUsuario(@PathVariable Long id , @RequestBody @Valid UsuarioInserirDTO usuarioInserirDTO){
+
+	@PutMapping("/alterar/{nome}")
+	public ResponseEntity<Object> AlterarUsuario(@PathVariable String nome, @RequestBody @Valid UsuarioInserirDTO usuarioInserirDTO){
 		try {
-			UsuarioDTO user = usuarioService.atualizarUsuario(id ,usuarioInserirDTO);
-			return ResponseEntity.ok().body(user);
+			UsuarioDTO usuarioDTO = usuarioService.atualizarUsuario(nome, usuarioInserirDTO);
+			URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+					.path("/{id}")
+					.buildAndExpand(usuarioDTO.getId())
+					.toUri();
+			return ResponseEntity.ok().body(usuarioDTO);
 		}catch(EmailException e) {
-			return ResponseEntity.unprocessableEntity().body(e.getMessage()); 
+			return ResponseEntity.unprocessableEntity().body(e.getMessage());
 		}
 	}
 	
