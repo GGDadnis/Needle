@@ -127,7 +127,7 @@ public class PacienteController {
 		pacienteService.removerId(id);       
 	}
 
-	@GetMapping("/nome")
+	@GetMapping("/nome/{nome}")
 
 	public ResponseEntity<Object> buscarPorNome(@PathVariable  String nome) {
 		try {
