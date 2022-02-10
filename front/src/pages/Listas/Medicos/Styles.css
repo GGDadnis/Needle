@@ -1,0 +1,9 @@
+.Main-container-medico{
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-Content: center;
+    width: 50%;
+    
+}

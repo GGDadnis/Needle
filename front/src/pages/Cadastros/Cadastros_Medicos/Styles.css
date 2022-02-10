@@ -1,0 +1,12 @@
+.Main-Container-CadastroMedicos {
+  background-color: #f3f3f3;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.Form-container-medicos {
+  display: flex;
+  justify-content: center;
+  align-items: centers;
+  background-color: #f3f3f3;
+}

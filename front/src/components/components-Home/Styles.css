@@ -1,0 +1,87 @@
+.Main-bemvindo-container{
+
+    margin-top: 5%;
+
+}
+
+.Main-bemvindo-container h1{
+
+    text-align: center;
+    flex-direction: column;
+    font-size:530%;
+    color: #333333;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+}
+
+.main-container-bloco{
+
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #F3F3F3;
+   
+
+}
+.div-container-botao{
+    
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.div-container-botao a{
+
+    text-decoration: none;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.botao-container-cadastro{
+   
+    margin:40px;
+    margin-right:5%;
+    background:#004567;
+    height:229px;
+    width:300px;
+    border-radius:40px;
+    color:#fff;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.botao-container-cadastro h4{
+
+    margin-top:5%
+}
+.botao-container-cadastro h3{
+
+    margin-top:10%;
+    font-size: 60px;
+}
+
+.linha {
+
+    background-color: #fff;
+    padding: 1px;
+    width:90%;
+    margin-left:1%;
+
+}
+
+  @media(max-width:1226px){
+      
+    .div-container-botao{
+        flex-direction: column;
+    }
+    img{
+        display: none;
+    }
+
+  } 
+ 

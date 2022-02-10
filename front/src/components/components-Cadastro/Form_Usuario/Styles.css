@@ -1,0 +1,34 @@
+.Main-container-Form-Cadastro {
+   display: flex;
+   flex-direction: column;
+   margin-top: 20px;
+   justify-content: center;
+ }
+ .col-cadastrar {
+   display: flex;
+   justify-content: flex-end;
+   margin: 10px;
+ }
+ .col-voltar-usuario {
+   display: flex;
+   justify-content: flex-start !important;
+   margin: 10px;
+ }
+ .botao-final {
+   width: 98px !important;
+   height: 36px !important;
+   align-items: baseline !important;
+   margin: 0 !important;
+ }
+ .botao-voltar-usuario {
+   width: 98px !important;
+   height: 36px !important;
+   align-items: baseline !important;
+   margin: 0 !important;
+   background-color: firebrick;
+   margin-top: 10px;
+ }
+ h6 {
+   margin: 0;
+ }
+ 

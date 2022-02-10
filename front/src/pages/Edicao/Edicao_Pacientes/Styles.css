@@ -1,0 +1,15 @@
+.Main-Container-EdicaoPacientes{
+    background-color: #F3F3F3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   
+}
+.Edicao-container-pacientes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3F3F3;
+    
+    
+}

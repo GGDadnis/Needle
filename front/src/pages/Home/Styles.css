@@ -1,0 +1,14 @@
+.bemVindo-main-container{
+        display: flex;
+        justify-content: center;
+        
+       
+
+}
+.main-container-Home{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #F3F3F3;
+       
+}

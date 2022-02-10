@@ -1,0 +1,50 @@
+.Main-container-Form-Cadastro {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  justify-content: center;
+}
+.col-cadastrar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+.col-voltar-recibo {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.col-pdf {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.botao-final {
+  width: 98px !important;
+  height: 36px !important;
+  align-items: baseline !important;
+  margin: 0 !important;
+}
+.botao-pdf {
+  width: 110px !important;
+  height: 36px !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+.botao-voltar-recibo {
+  width: 98px !important;
+  height: 36px !important;
+  align-items: baseline !important;
+  margin: 0 !important;
+  background-color: firebrick;
+  margin-top: 10px;
+}
+h6 {
+  margin: 0;
+}
+.container-valor{
+  display: flex;
+}
+.container-valor h6 {
+ margin-right: 10px;
+}

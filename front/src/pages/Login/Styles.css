@@ -1,0 +1,27 @@
+.main-container {
+    display: flex;
+    background-color:#31647D;
+    height: 100vh;
+}
+
+.form-login-container {
+    width: 30%;
+    min-width: 360px;
+}
+
+.main-container-full img{
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+   
+}
+
+
+@media(max-width:1226px){
+    #login{
+       display: none;
+    }
+    .form-login-container{
+        width:100%;
+    }
+}

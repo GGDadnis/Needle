@@ -1,0 +1,12 @@
+.Main-Container-CadastroUsuarios{
+    background-color: #F3F3F3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.Form-container-usuarios{
+    display: flex;
+    justify-content: center;
+    align-items: centers;
+    background-color: #F3F3F3;
+}

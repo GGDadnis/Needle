@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="recibo_model1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d312e16d-6e01-4296-9f15-9071de87eb9b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<parameter name="exibeNomeMedico" class="java.lang.Boolean"/>
+	<parameter name="exibeNomePaciente" class="java.lang.Boolean"/>
+	<parameter name="exibeServico" class="java.lang.Boolean"/>
+	<parameter name="servico" class="java.lang.String"/>
+	<parameter name="valor" class="java.lang.Double"/>
+	<parameter name="nomePaciente" class="java.lang.String"/>
+	<parameter name="nomeMedico" class="java.lang.String"/>
+	<parameter name="exibeValor" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="50">
+			<staticText>
+				<reportElement x="465" y="10" width="95" height="14" uuid="6124e5c9-d0de-40fe-ba24-df4c751cec32">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Data de emissão:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH:mm:ss">
+				<reportElement x="436" y="24" width="124" height="14" uuid="f047c541-208e-46e4-b7d2-ae1427dbcf2d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="291" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="150" y="2" width="410" height="158" forecolor="#FFFFFF" backcolor="#525252" uuid="2637ee67-de68-426a-81f3-2d3633343f80">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement mode="Transparent" x="9" y="30" width="72" height="20" forecolor="#FFFFFF" uuid="43f290a7-516f-4960-aac8-dddbeca5471f">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e8fe7714-6b56-439f-8406-25be49efef9d"/>
+						<printWhenExpression><![CDATA[$P{exibeNomeMedico} != false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ Médico:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="9" y="90" width="72" height="20" forecolor="#FFFFFF" uuid="7b371581-0d9f-4be5-ac46-a60478ec3edc">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24cce5e5-1132-4b5a-8a8a-a7e1c0c01f05"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$P{exibeServico} != false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ Serviço:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="10" y="60" width="72" height="20" forecolor="#FFFFFF" uuid="85d36469-efda-4f9f-a23a-3d8fc4792020">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="411caef7-0f91-4f8e-93a3-32884c6ed131"/>
+						<printWhenExpression><![CDATA[$P{exibeNomePaciente} != false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ Paciente:]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement mode="Opaque" x="280" y="120" width="118" height="26" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="07b46c71-f21d-4bce-861c-9fe69f074fa3">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24cce5e5-1132-4b5a-8a8a-a7e1c0c01f05"/>
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+						<printWhenExpression><![CDATA[$P{exibeValor} != false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="16" isBold="true"/>
+						<paragraph rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{valor}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Transparent" x="9" y="120" width="261" height="26" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="e5ed18d1-743b-4d8b-8965-52821f9d4f44">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6b1ccc78-907b-4711-b655-543af8777f66"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[$P{exibeValor} != false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineColor="#FFFFFF"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor: ]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="90" y="90" width="309" height="20" uuid="05c88b49-b20e-4d10-b17c-5d50552567ef">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6b1ccc78-907b-4711-b655-543af8777f66"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+						<printWhenExpression><![CDATA[$P{exibeServico} != false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineColor="#FFFFFF"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{servico}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="90" y="30" width="309" height="20" uuid="9ab56523-a1e2-4c92-bb50-31053da8f11d">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e8fe7714-6b56-439f-8406-25be49efef9d"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+						<printWhenExpression><![CDATA[$P{exibeNomeMedico} != false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineColor="#FFFFFF"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{nomeMedico}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="90" y="60" width="309" height="20" uuid="1b2aac4a-1d72-4c8b-be0b-79c3f2ec5f86">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="411caef7-0f91-4f8e-93a3-32884c6ed131"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+						<printWhenExpression><![CDATA[$P{exibeNomePaciente} != false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineColor="#FFFFFF"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="12"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{nomePaciente}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement x="321" y="219" width="239" height="1" uuid="13392510-b8d7-4669-9300-6d420148b235"/>
+			</line>
+			<staticText>
+				<reportElement x="460" y="220" width="100" height="16" uuid="a622c36e-6d42-49e9-88bc-2394408a30cf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Assinatura do Médico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="2" width="140" height="158" forecolor="#FFFFFF" backcolor="#525252" uuid="52108ad8-aa22-4f26-b2d7-1574c323089b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="411caef7-0f91-4f8e-93a3-32884c6ed131"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#333333"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recibo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+</jasperReport>
