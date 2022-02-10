@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 
 
-
 export default function Form_Medico() {
 
   const [adm, setAdm] = useState(false)

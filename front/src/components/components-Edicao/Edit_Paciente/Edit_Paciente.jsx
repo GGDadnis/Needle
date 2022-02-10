@@ -8,10 +8,11 @@ import React,{useContext,useState,useEffect } from "react";
 export default function Edit_Paciente() {
 
   const {idPaciente,SetIDPaciente}= useContext(Context)
-  const token = localStorage.getItem("tokenA")
-  const [pacientes,setPaciente]= useState()
 
-  console.log(idPaciente)
+  const [pacientes,setPaciente]= useState()
+  const token = localStorage.getItem("tokenA")
+  
+ 
   const[form, setForm] = useState({
     nomePaciente:"",
     email:"",
@@ -26,14 +27,20 @@ export default function Edit_Paciente() {
     cidade:"",
     uf:"",
     logradouro:"",
-    bairro:""}, {
-      headers:{"Authorization":`Bearer ${token}`}
-     })
+    bairro:""})
 
-    console.log("seta o form")
+  console.log(idPaciente)
+
+  function changeForm(e){
+    const {name, value} = e.target;
+    console.log(form) 
+    setForm({...form, [name]: value})
+  }
 
   useEffect(() => {        
-    api.get(`pacientes/${idPaciente}`)
+    api.get(`pacientes/${idPaciente}`, {
+      headers:{"Authorization":`Bearer ${token}`}
+     })
        .then((response)=>{    
         setForm({...form,
           nomePaciente:response.data.nomePaciente,
@@ -95,14 +102,6 @@ export default function Edit_Paciente() {
           setForm({...form,cidade:response.data.localidade,uf:response.data.uf,logradouro:response.data.logradouro,bairro:response.data.bairro})
         })
       }
-
-
-      function changeForm(e){
-        const {name, value} = e.target;
-        console.log(form) 
-        setForm({...form, [name]: value})
-      
-    }
 
   return (
     <div className="">

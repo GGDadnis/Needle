@@ -32,8 +32,7 @@ export default function Edit_Medico() {
     const {name, value} = e.target;
     console.log(form) 
     setForm({...form, [name]: value})
-  
-}
+  }
 
   useEffect(() => {        
 
@@ -68,7 +67,7 @@ export default function Edit_Medico() {
       },[])
 
       function Atualizar(){
-        api.put(`http://localhost:8080/medicos/cadastrar/atualizar?nomeMedico=${medicos.nomeMedico}`,{ 
+        api.put(`medicos/cadastrar/atualizar?nomeMedico=${medicos.nomeMedico}`,{ 
 
                   nomeMedico:form.nomeMedico,
                   cpf:form.cpf,
