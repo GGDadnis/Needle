@@ -72,7 +72,7 @@ export default function Edit_Paciente() {
       },[])
 
   function Atualizar(){
-      api.put(`pacientes/atualizar?nomePaciente=${pacientes.nomePaciente}`,{ 
+      api.put(`pacientes/${pacientes.nomePaciente}`,{ 
 
                   nomePaciente:form.nomePaciente,
                   email:form.email,

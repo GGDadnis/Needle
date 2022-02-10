@@ -1,5 +1,6 @@
 package org.alterdata.shopback.app.dto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.alterdata.shopback.app.model.Endereco;
 import org.alterdata.shopback.app.model.Recibo;
 
-public class PacienteInserirDTO {
+public class PacienteInserirDTO{
 	
 	@NotBlank(message = "{nome.not.blank}")
 	private String nomePaciente;
