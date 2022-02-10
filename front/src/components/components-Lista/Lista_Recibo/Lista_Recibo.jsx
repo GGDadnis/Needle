@@ -47,8 +47,9 @@ export default function Lista_Recibo() {
 
         console.log('entrou')
         console.log("nome do paciente clicado = ",nome)
+        console.log(token);
   
-        api.get(`pacientes/nome/?nome=${nome}`, {
+        api.get(`pacientes/nome/${nome}`, {
           headers:{"Authorization":`Bearer ${token}`}
          })
           .then((response)=>{

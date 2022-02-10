@@ -8,11 +8,10 @@ import React,{useContext,useState,useEffect } from "react";
 export default function Edit_Paciente() {
 
   const {idPaciente,SetIDPaciente}= useContext(Context)
-
-  const [pacientes,setPaciente]= useState()
   const token = localStorage.getItem("tokenA")
-  
- 
+  const [pacientes,setPaciente]= useState()
+
+  console.log(idPaciente)
   const[form, setForm] = useState({
     nomePaciente:"",
     email:"",
@@ -27,20 +26,14 @@ export default function Edit_Paciente() {
     cidade:"",
     uf:"",
     logradouro:"",
-    bairro:""})
-
-  console.log(idPaciente)
-
-  function changeForm(e){
-    const {name, value} = e.target;
-    console.log(form) 
-    setForm({...form, [name]: value})
-  }
-
-  useEffect(() => {        
-    api.get(`pacientes/${idPaciente}`, {
+    bairro:""}, {
       headers:{"Authorization":`Bearer ${token}`}
      })
+
+    console.log("seta o form")
+
+  useEffect(() => {        
+    api.get(`pacientes/${idPaciente}`)
        .then((response)=>{    
         setForm({...form,
           nomePaciente:response.data.nomePaciente,
@@ -72,7 +65,7 @@ export default function Edit_Paciente() {
       },[])
 
   function Atualizar(){
-      api.put(`pacientes/${pacientes.nomePaciente}`,{ 
+      api.put(`pacientes/atualizar?nomePaciente=${pacientes.nomePaciente}`,{ 
 
                   nomePaciente:form.nomePaciente,
                   email:form.email,
@@ -102,6 +95,14 @@ export default function Edit_Paciente() {
           setForm({...form,cidade:response.data.localidade,uf:response.data.uf,logradouro:response.data.logradouro,bairro:response.data.bairro})
         })
       }
+
+
+      function changeForm(e){
+        const {name, value} = e.target;
+        console.log(form) 
+        setForm({...form, [name]: value})
+      
+    }
 
   return (
     <div className="">

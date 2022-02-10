@@ -15,6 +15,7 @@ export default function Form_Recibo() {
 
   })
   const [verificar, setVerificar] = useState(false)
+  const [layout, setLayout] = useState(0, [])
 
   
   function changeVerificar(){
@@ -44,7 +45,7 @@ export default function Form_Recibo() {
         nomePaciente:form.nomePaciente,
         servico:form.servico,
         valor:form.valor,
-        tipoLayout:form.tipo,
+        tipoLayout:layout,
         exibicaoCampos:{
           exibeNomeMedico:true,
           exibeNomePaciente: true,
@@ -52,7 +53,7 @@ export default function Form_Recibo() {
           exibeValor:true
         }
        }, {
-        headers:{"Authorization":`Bearer ${token}`, },
+        headers:{"Authorization":`Bearer ${token}` },
         responseType:"blob"
        }).then(response => {
                
@@ -61,10 +62,10 @@ export default function Form_Recibo() {
     });
     let url = window.URL.createObjectURL(blob)
     window.open(url);
-       
-
-      }).catch((erro)=>console.log(erro))
-      
+      }).catch((erro)=>{
+        console.log(erro)
+        alert("um dos campos ta errado amigão")
+      })
   }
 
   function changeForm(e){
@@ -73,6 +74,17 @@ export default function Form_Recibo() {
     setForm({...form, [name]: value})
   
 }
+
+  const changeLayoutReport = ()=>{
+    if(layout == 0){
+      setLayout(1);
+    }else{
+      if(layout == 1){
+        setLayout(0)
+      }
+    }
+    console.log(layout);
+  }
 
 
 
@@ -111,7 +123,7 @@ export default function Form_Recibo() {
         </div>
       </Col>
       <Row>
-        <Col sm={4}>
+        <Col sm={6}>
           <div>
             <Form>
               <Form.Group className="mb-2" controlId="formBasicServico">
@@ -148,21 +160,14 @@ export default function Form_Recibo() {
         </Col>
         <Col sm={4}>
           <div>
-            <Form>
-              <Form.Group className="mb-2" controlId="formBasicTipo">
-                <Form.Label>
-                  <h6>tipo</h6>
-                </Form.Label>
-                <Form.Control
-                  type="name"
-                  placeholder="tipo do baguio india"
-                  name="tipo" 
-                  value={form.tipo}
-                   onChange={changeForm}
-                />
-                <Form.Text className="text-muted"></Form.Text>
-              </Form.Group>
-            </Form>
+            <p className="mb-2">
+              mudar o layout
+            </p>
+          <Button className="botao-pdf" onClick={changeLayoutReport}>
+            <h6>{layout}</h6>
+          </Button>
+          
+
           </div>
         </Col>
       </Row>
