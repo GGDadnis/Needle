@@ -1,13 +1,12 @@
 
 .needle-navBar text{
     
-    margin-top: 10px;
     font-weight: bold;
     font-size: 30px;
     color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
-    
+   
 }
 
 .main-container-NavBar{
@@ -16,10 +15,9 @@
     background:#004567;
     align-items: center;
     justify-content: center;
-    border-radius: 0px 0px 20px 20px;
-    box-shadow: 10px 5px 5px rgb(167, 165, 165)
+    height: 80px;
 
-}
+ }
 
 .main-container-NavBar a{
 
@@ -52,49 +50,63 @@
 
     display: flex;
     align-items: center;
-    height: 100px;
-   
-   
+      
 }
 
 .icon-navBar{
 
-    min-width: 64px;
+    min-width: 30px;
+}
 
+.sair{
+
+    margin-bottom: -2%;
+}
+
+.bSair{
+    min-height: 60px;
+    min-width: 60px;
 }
 
 .container-opcoes{
 
     display: flex;
     flex-direction:row;
-
+    
 }
 
 #basic-nav-dropdown{
 
    color: #fff;
-   margin-left:50px;
+   margin-left: 50px;
+   font-size: 22px;
 
 }
+
+#offcanvasNavbarLabel{
+    margin-left: 28%;
+}
+
 #nav-basic{
 
     color: #000;
-    display:none
+    display:none;
 
 }
+
 @media(max-width:1226px){
 
     #nav-basic{
 
         display:block;
-        margin-top:10px
-
-    }
+        margin-top:10px;
+        }
 
 
     .container-opcoes{
 
         display: none;
+
     }
 
 

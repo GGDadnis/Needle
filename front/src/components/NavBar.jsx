@@ -37,7 +37,7 @@ export default function NavBar(){
                                                
                                             </NavDropdown>
                                             <NavDropdown title="Recibo" id="basic-nav-dropdown">
-                                                <NavDropdown.Item href="/lista-recibos">Historico de Recibos</NavDropdown.Item>
+                                                <NavDropdown.Item href="/lista-recibos">Histórico de Recibos</NavDropdown.Item>
                                                 <NavDropdown.Item href="/cadastro-recibos">Criar um Recibo</NavDropdown.Item>
                                          </NavDropdown>
                                          </div>
@@ -52,26 +52,31 @@ export default function NavBar(){
                                         >
                                             
                                         <Offcanvas.Header closeButton>
-                                            <Offcanvas.Title id="offcanvasNavbarLabel">Needle options</Offcanvas.Title>
+                                            <Offcanvas.Title id="offcanvasNavbarLabel">Needle Options</Offcanvas.Title>
                                         </Offcanvas.Header>
                                         
                                         <Offcanvas.Body >
-                                            <Nav className="nav-button justify-content-end flex-grow-1 pe-3" >                                
-                                                <p>Sair</p>                    
-                                                <Nav.Link href="/login"><button><img className='icon-navBar' src={sair}/></button></Nav.Link>                  
+                                            <Nav className="nav-button justify-content-end flex-grow-1 pe-3" >                        
+                                                <Nav.Link href="/login"><button className='bSair'><p className="sair">Sair</p></button></Nav.Link>     
+                                                             
                                                   <div className='responsive-container'>
-                                                    <NavDropdown title="Medico" id="nav-basic">
-                                                    <NavDropdown.Item href="/lista-medicos">Lista de Medicos</NavDropdown.Item>
-                                                    <NavDropdown.Item href="/cadastro-medicos">Cadastrar Medicos</NavDropdown.Item>
-                                                
+                                                <NavDropdown title="Medico" id="nav-basic">
+                                                    <NavDropdown.Item href="/lista-medicos">Lista de Médicos</NavDropdown.Item>
+                                                    <NavDropdown.Item href="/cadastro-medicos">Cadastrar Médicos</NavDropdown.Item>
                                                 </NavDropdown>
+
                                                 <NavDropdown title="Paciente" id="nav-basic">
                                                     <NavDropdown.Item href="/lista-pacientes">Lista de Pacientes</NavDropdown.Item>
                                                     <NavDropdown.Item href="/cadastro-pacientes">Cadastrar Paciente</NavDropdown.Item>
-                                                
                                                 </NavDropdown>
+
+                                                <NavDropdown title="Usuário" id="nav-basic">
+                                                    <NavDropdown.Item href="/lista-usuarios">Lista de Usuários</NavDropdown.Item>
+                                                    <NavDropdown.Item href="/cadastro-usuarios">Cadastrar Usuário</NavDropdown.Item>
+                                                </NavDropdown>
+
                                                 <NavDropdown title="Recibo" id="nav-basic">
-                                                    <NavDropdown.Item href="/lista-recibos">Historico de Recibos</NavDropdown.Item>
+                                                    <NavDropdown.Item href="/lista-recibos">Histórico de Recibos</NavDropdown.Item>
                                                     <NavDropdown.Item href="/cadastro-recibos">Criar um Recibo</NavDropdown.Item>
                                             </NavDropdown>
                                              </div>
