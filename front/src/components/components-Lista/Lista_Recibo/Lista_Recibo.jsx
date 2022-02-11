@@ -5,61 +5,65 @@ import './Styles.css';
 
 export default function Lista_Recibo() {
   const [recibo, setRecibos] = useState();
-  const [pacientes, setPacientes] = useState();
-  const [email, setEmail] =useState();
+  const [pacientes, setPacientes] = useState(null, []);
+  const [email, setEmail] = useState(null, []);
   const token = localStorage.getItem("tokenA")
-  
-  useEffect(() => {        
-    
+
+  useEffect(() => {
+
     api.get("recibos", {
-      headers:{"Authorization":`Bearer ${token}`}
-     })
-       .then((response)=>{
-       
-               setRecibos(response.data)
-               console.log(response.data)
-       })
+      headers: { "Authorization": `Bearer ${token}` }
+    })
+      .then((response) => {
+
+        setRecibos(response.data)
+        console.log(response.data)
+      })
 
 
-      },[])
+  }, [])
 
-     async function setPacientess(response,id){
-       setPacientes(response.data);
-       console.log(pacientes.nomePaciente)
-       setEmail(pacientes.email);
-       console.log(pacientes.email)
-       api.post(`email?id=${id}`,{
-        
-          destino:email,
-          corpo:"Isso é um e-mail automático, favor não responder!",
-          assunto: "Envio do recibo da Clínica Médica.",
-
-        }, {
-          headers:{"Authorization":`Bearer ${token}`}
-         }
-
-       ).then((response)=>{        
-       })    
-      
-      }
-      function pegarEmail(nome,id){
- 
-
-        console.log('entrou')
-        console.log("nome do paciente clicado = ",nome)
-        console.log(token);
-  
-        api.get(`pacientes/nome/${nome}`, {
-          headers:{"Authorization":`Bearer ${token}`}
-         })
-          .then((response)=>{
-              setPacientess(response,id)
+  async function setPacientess(response, id) {
     
-          })
-         
+    api.post(`email?id=${id}`, {
 
-        }
-     
+      destino: response.data.email,
+      corpo: "Isso é um e-mail automático, favor não responder!",
+      assunto: "Envio do recibo da Clínica Médica.",
+
+    }, {
+      headers: { "Authorization": `Bearer ${token}` }
+    }
+
+    ).then((response) => {
+    })
+
+  }
+
+  async function setarpaciente(a) {
+     setPacientes(a)
+
+  }
+  async function setarEmail(b) {
+     setEmail(b)
+  }
+
+  async function pegarEmail(nome, id) {
+
+
+    console.log('entrou')
+    console.log("nome do paciente clicado = ", nome)
+    console.log(token);
+
+    await api.get(`pacientes/nome/${nome}`, {
+      headers: { "Authorization": `Bearer ${token}` }
+    })
+      .then((response) => {
+        //setarpaciente(response.data)
+        setPacientess(response, id)
+      })
+  }
+
 
   return (
     <div class="table-responsive-sm">
@@ -82,8 +86,8 @@ export default function Lista_Recibo() {
                 <td>{recibo?.paciente}</td>
                 <td>{recibo?.servico}</td>
                 <td>{recibo?.valor}</td>
-                <div>               
-                  <Button className="botao-atualizar" value={recibo.paciente,recibo.id} onClick={value => (pegarEmail(recibo?.paciente,recibo?.id))}>Enviar por email</Button> 
+                <div>
+                  <Button className="botao-atualizar" value={recibo.paciente, recibo.id} onClick={value => (pegarEmail(recibo?.paciente, recibo?.id))}>Enviar por email</Button>
                 </div>
               </tr>
             );
