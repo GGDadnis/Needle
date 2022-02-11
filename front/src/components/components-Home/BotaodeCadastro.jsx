@@ -25,7 +25,7 @@ export default function BotaodeCadastro(){
                 })
 
                 .catch(() => {
-                    console.log("fiz merda fml")
+                    console.log("não funcionou")
 
                 })
     
@@ -41,7 +41,7 @@ export default function BotaodeCadastro(){
                 })
 
                 .catch(() => {
-                    console.log("fiz merda fml")
+                    console.log("não funcionou")
 
                 })
     
@@ -57,7 +57,7 @@ export default function BotaodeCadastro(){
                 })
 
                 .catch(() => {
-                    console.log("fiz merda fml")
+                    console.log("não funcionou")
 
                 })
     
@@ -72,14 +72,14 @@ export default function BotaodeCadastro(){
                 <div className='botao-container-cadastro'>
                 <h4>Medicos</h4>
                 <div className='linha' ></div>
-                <a style={{}}href='#'><h3>{medicos?.length}</h3></a> 
+                <a style={{}}href='/lista-medicos'><h3>{medicos?.length}</h3></a> 
 
             </div> 
 
             <div className='botao-container-cadastro'>
                 <h4 >Pacientes</h4>
                 <div className='linha' ></div>
-                <a style={{}}href='#'><h3>{pacientes?.length}</h3></a>
+                <a style={{}}href='/lista-pacientes'><h3>{pacientes?.length}</h3></a>
 
             </div> 
 
@@ -87,7 +87,7 @@ export default function BotaodeCadastro(){
               
               <h4>Recibos</h4>
               <div className='linha'  ></div>
-              <a style={{}}href='#'> <h3>{recibos?.length}</h3></a> 
+              <a style={{}}href='/lista-recibos'> <h3>{recibos?.length}</h3></a> 
 
              </div> 
         
